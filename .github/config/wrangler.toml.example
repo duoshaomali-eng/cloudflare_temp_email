@@ -1,0 +1,21 @@
+# This file is for reference only. Actual config is in BACKEND_TOML secret.
+name = "cloudflare_temp_email"
+main = "src/worker.ts"
+compatibility_date = "2025-04-01"
+compatibility_flags = [ "nodejs_compat" ]
+keep_vars = true
+
+[vars]
+PREFIX = "tmp"
+DEFAULT_DOMAINS = ["metalstampingparts.ltd"]
+DOMAINS = ["metalstampingparts.ltd"]
+JWT_SECRET = "change-me-please"
+BLACK_LIST = ""
+ENABLE_USER_CREATE_EMAIL = true
+ENABLE_USER_DELETE_EMAIL = true
+ENABLE_AUTO_REPLY = false
+
+[[d1_databases]]
+binding = "DB"
+database_name = "temp-email-db"
+database_id = "7f5adb59-024d-43ba-a606-f9450ee08b7c"
